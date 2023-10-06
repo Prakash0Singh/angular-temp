@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+  </head>
+  <style>
+    #mistrybox {
+      display: none;
+    }
+  </style>
+  <body>
+    <!--  onload="demo()"
+
+onload()
+onclick()
+onmouseover()
+onmoserout()
+onchange()
+oninput()
+
+EVENT METHODS---
+
+preventDefalut()
+stopPropagation()
+stopImmediatePropagation()
+removeEventListener()
+
+ -->
+    <button onclick="change()">Alert</button>
+    <button onclick="color()" id="samplecolor">Color</button>
+    <button id="para">Show Text</button>
+    <button id="showmis">Show Mistry Box</button>
+    <button id="hidemis">Hide Mistry Box</button>
+    <button id="mouseevent">Mouse Event</button>
+    <p id="showtext"></p>
+    <div id="mistrybox">
+      <p>This is Another Paragraph But different,</p>
+      <p>We hide it and then show it agian on Screen</p>
+    </div>
+    <div style="height: 50px;width: 50px;background-color: rgb(134, 224, 82); display: none;" id="box1"></div>
+    <br>
+    <div id="demo1" style="height: 80px; width: 100px; background-color: aquamarine">
+        DIV BOX
+        <button id="demo3">Capturing</button>
+    </div>
+    <br>
+    <div id="demo4" style="height: 80px; width: 100px; background-color: blueviolet">
+        DIV BOX
+      <button id="demo2">Bubbling</button>
+    </div>
+    <div>
+      <h5>onChange Event on Dropdown items &  Radio Buttons</h5>
+      <label for="optionsList">Select Car You Like </label>
+      <select id="optionsList" onchange="selectChange()">
+        <option value=""></option>
+        <option value="BMW">BMW</option>
+        <option value="MUSTANG">MUSTANG</option>
+        <option value="FORTUNER">FORTUNER</option>
+        <option value="THAR">THAR</option>
+      </select>
+      <p>You Selected <span id="cars"> </span></p>
+    </div>
+    <div>
+      <input type="radio" name="colorChange" id="redColor" value="Red" onchange="getColor(this)"/>Red
+      <input type="radio" name="colorChange" id="blueColor" value="Blue" onchange="getColor(this)"/>Blue
+      <input type="radio" name="colorChange" id="greenColor" value="Green" onchange="getColor(this)" />Green
+      <input type="radio" name="colorChange" id="whiteColor" value="White" onchange="getColor(this)" />Reset
+    </div>
+
+    <div>
+      <h5>onInput Event in Javascript</h5>
+      <label for="onInputEvent">Type Anything Here</label>
+      <input type="text" id="onInputEvent" oninput="inputEvent(this)" onfocus="focusFunction()" onblur="blurFunction()"/>
+      <p id="showHere"></p>
+    </div>
+    <div>
+        <h5>preventDefalut() Method to prevent default Behaviour</h5>
+      <a id="googlePage" href="https://www.google.com/">Let's Google It</a>
+    <h5>stopPropagation() Method use to Prevent Bubbling or Capturing</h5>
+      <div id="box6" style="height: 80px; width: 100px; margin-top: 10px; background-color: brown" >
+        DIV
+        <button id="box7" style="height: 40px; width: 80px; background-color: salmon">Button</button>
+      </div>
+    </div>
+    <h5>stopImmediatePropagation() used to stop Multiple event operation on single Event</h5>
+    <button id="myBtn">Multi Events</button>
+    <h5>Button Event Removed After 10sec on Loading</h5>
+    <button id="btn">Button</button>
+  </body>
+  <script>
+    let stop = true;
+    //stopPropagation()
+    let stpPro = document.getElementById("box7");
+    stpPro.addEventListener("click", function (e) {
+      alert("Button Clicked");
+        e.stopPropagation();
+    });
+    let stpPro2 = document.getElementById("box6");
+    stpPro2.addEventListener("click", function (e) {
+      alert("DIV BOX Clicked");
+    });
+
+    //preventDefault()
+    let stopDefault = document.getElementById("googlePage");
+    stopDefault.addEventListener("click", function (e) {
+      e.preventDefault();
+      alert("Using preventDefault() from redirecting to Google Homepage");
+    });
+    stopDefault.addEventListener('click',function(e){
+      document.body.style.background="grey";
+    })
+
+    //stopImmediatePropagation()
+
+    var x = document.getElementById("myBtn");
+    x.addEventListener("click", myFunction);
+    x.addEventListener("click", someOtherFunction);
+
+    function myFunction(event) {
+      alert("Hello World!");
+        event.stopImmediatePropagation();
+    }
+    function someOtherFunction() {
+      alert("I will not get to say Hello World");
+    }
+
+    //onLoad Event
+    demo = () => {
+      alert("Page Loaded");
+    };
+
+    const change = () => {
+      alert("Hello World !!!!");
+    };
+    const color = () => {
+      const backcolor = document.body.style.background;
+      const colors = samplecolor.style.color;
+
+      samplecolor.style.color = "skyblue";
+      if (backcolor === "skyblue" && colors == "skyblue") {
+        document.body.style.background = "white";
+        samplecolor.style.color = "black";
+      } else {
+        document.body.style.background = "skyblue";
+      }
+    };
+
+    document.getElementById("para").addEventListener("click", function (e) {
+      showtext.style.color = "red";
+      document.getElementById("showtext").innerHTML =
+        "Hello World !" + "<br>" + "Javascript Language";
+    });
+
+    const mist = document.getElementById("showmis");
+    mist.addEventListener("click", function (e) {
+      mistrybox.style.display = "block";
+    });
+    document.getElementById("hidemis").addEventListener("click", function (e) {
+      console.log(e.target);
+      mistrybox.style.display = "none";
+    });
+
+    const mouseEvent = document.getElementById("mouseevent");
+    mouseEvent.addEventListener("mouseover", function (e) {
+      box1.style.display = "block";
+    });
+
+    mouseEvent.addEventListener("mouseout", function (e) {
+      box1.style.display = "none";
+    });
+    //Bubbling and Capturing Event
+    document.getElementById("demo1").addEventListener(
+      "click",
+      function (e) {
+        alert("This is Div 1.");
+      },
+      true
+    );
+    document.getElementById("demo3").addEventListener(
+      "click",
+      function (e) {
+        alert("This is Capturing.");
+      },
+      true
+    );
+    document.getElementById("demo2").addEventListener("click", function (e) {
+      alert("This is Bubbling.");
+    });
+    document.getElementById("demo4").addEventListener("click", function (e) {
+      alert("This is Div 2.");
+    });
+
+    //onChange Event on Dropdown
+    function selectChange() {
+      let favCar = document.getElementById("optionsList").value;
+      console.log(favCar);
+      document.getElementById("cars").innerHTML = "<b>" + favCar + "</b>";
+    }
+    //onChange Event on Radio
+    function getColor(param) {
+      console.log(param.id);
+    document.body.style.background = param.value;
+    }
+    //onInput Event on Input field
+    function inputEvent(param) {
+      document.getElementById("showHere").innerHTML ="Your Text is -" + param.value;
+    }
+    function focusFunction(event){
+        document.getElementById("onInputEvent").style.background="yellow"
+    }
+    function blurFunction(event){
+        document.getElementById("onInputEvent").style.background="white"
+    }
+    //removeEventLister()
+    let btn=document.getElementById('btn')
+    let remo = function(){
+        alert("Hello World Again")
+    }
+    setInterval(() => {
+        btn.removeEventListener('click',remo);
+    }, 10000);
+    btn.addEventListener('click',remo);
+  </script>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <title>Flipkart</title>
+</head>
+<style>
+    body {
+        background-color: rgba(128, 128, 128, 0.258);
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .search-box {
+        width: 300px;
+        height: 35px;
+    }
+
+    .search-box input[type="search"] {
+        width: 100%;
+        height: 100%;
+        border: 0px;
+        border-radius: 0px;
+    }
+
+    .search-button {
+        background-color: white;
+        border-radius: 0px;
+        border: 0px;
+    }
+
+    .search-bar {
+        background-color: white;
+    }
+    .categories-list{
+        list-style: none;
+        padding: 0%;
+    }
+    .categories-list li{
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        line-height: 21px;
+    }
+    .categories-list li a{
+        display: block;
+        padding: 15px 25px;
+        color:black;
+    }
+    a {
+        text-decoration: none;
+    }
+    .categories-list li a:hover{
+        color: white;
+    }
+    .categories-list li ul.electro{
+        min-width: 100%; /* Set width of the dropdown */
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+    }
+    .categories-list li:hover ul.electro{
+        display: block;	/* Display the dropdown */
+    }
+    .categories-list li ul.electro li{
+        display: block;
+    }
+    
+    /* Product page Css */
+    .rating-product{
+    padding: 3px 7px;
+    font-size: 12px;
+    color: rgb(255 255 255);
+    border-radius: 4px;
+    }
+    .product-preview{
+        list-style: none;
+        padding: 0px;
+        float: right;
+    }
+    .offer-list{
+        list-style: none;
+        padding-left: 8px;
+    }
+    .preview-image{
+        height: 430px;
+    }
+    .product-preview li img{
+        border: 1px solid black;
+    }
+    .preview-image img{
+        max-width: 100%;
+        max-height: 100%;
+        float: right;
+    }
+
+    .first-footer {
+        font-size: 0.7rem;
+    }
+
+    .second-footer {
+        font-size: 0.7rem;
+    }
+    .shopping-buttons button{
+        border: 0px;
+    }
+    @media screen and (max-width: 576px) {
+        .search-box {
+            width: 200px;
+        }
+        .owl-next,
+        .owl-prev {
+            top: 0px !important;
+        }
+    }
+
+    @media screen and (max-width: 410px) {
+        .navbar-brand {
+            display: none;
+        }
+
+        .search-box {
+            width: 200px;
+            height: 35px;
+        }
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.freepnglogos.com/uploads/flipkart-logo-png/flipkart-freshers-nation-freshers-jobs-testing-11.png"
+                    alt="..." height="50px" width="100px" />
+            </a>
+            <div class="d-flex ms-0 ms-sm-3 search-box">
+                <input class="form-control search-bar" type="search" placeholder="Search" aria-label="Search" /><button
+                    class="search-button">
+                    <i class="bi bi-search" style="padding-right: 10px"></i>
+                </button>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-0 mx-md-2">
+                        <a class="nav-link px-0" href="#">Login</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-md-1">
+                        <a class="nav-link px-0" href="#">Become Seller</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-md-2">
+                        <a class="nav-link px-0" href="#">More</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-md-3">
+                        <a class="nav-link px-0" href="#"><i class="bi bi-cart"></i> Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Categories -->
+<div class="container-fluid p-0">
+    <ul class="categories-list bg-primary">
+        <li><a href="">Grocery</a></li>
+        <li><a href="">Mobile</a></li>
+        <li><a href="">Fashion</a></li>
+        <li><a href="">Electronics &#9662;</a>
+            <ul class="electro p-0" >
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Monitors</a></li>
+                <li><a href="#">Printers</a></li>
+            </ul></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Appliances</a></li>
+    </ul>
+</div>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6" >
+                <div class="row pe-0">
+                    <div class="col-2 pe-0">
+                        <ul class="product-preview">
+                        <li class="mb-2 "><img src="https://rukminim1.flixcart.com/image/416/416/l5fnhjk0/dslr-camera/f/t/m/eos-r10-24-2-r10-canon-original-imagg42fsbgv79da.jpeg?q=70" alt=""  style="height:50px; width: 50px;" onmouseenter="showImages(this)"></li>
+                        <li class="mb-2"><img src="https://rukminim1.flixcart.com/image/416/416/l5fnhjk0/dslr-camera/2/c/q/eos-r10-24-2-r10-canon-original-imagg42fgrgstzks.jpeg?q=70" alt="" style="height:50px; width: 50px;" onmouseenter="showImages(this)"></li>
+                        <li class="mb-2"><img src="https://rukminim1.flixcart.com/image/416/416/xif0q/dslr-camera/d/e/h/-original-imaggjusqbj7rgq9.jpeg?q=70" alt="" style="height:50px; width: 50px;" onmouseenter="showImages(this)"></li>
+                        <li class="mb-2"><img src="https://rukminim1.flixcart.com/image/416/416/l5fnhjk0/dslr-camera/z/e/u/eos-r10-24-2-r10-canon-original-imagg42fuyju6jbb.jpeg?q=70" alt="" style="height:50px; width: 50px;" onmouseenter="showImages(this)"></li>
+                        </ul>
+                    </div>
+                    <div class="col-10">
+                    <div class="preview-image">
+                        <img src="https://rukminim1.flixcart.com/image/416/416/l5fnhjk0/dslr-camera/f/t/m/eos-r10-24-2-r10-canon-original-imagg42fsbgv79da.jpeg?q=70" alt=".." id="showeImageHere">
+                        <div class="mt-3 float-end shopping-buttons">
+                            <button class="px-4 py-2 text-light" style="background-color: #ff9f00;" ><i class="bi bi-cart2"></i> Add to Cart</button>
+                            <button class="px-4 py-2 text-light" style="background-color: #fb641b;"><i class="bi bi-lightning-fill"></i> Buy Now</button>
+                        </div>
+                    </div>
+                   
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Canon EOS R10 Mirrorless Camera Body with RF-S 18 - 150 mm f/3.5 - 6.3 IS STM Lens Kit  (Black)</h5>
+                <p class="d-inline-block bg-success rating-product mb-1">4.9 <i class="bi bi-star-fill"></i></p>
+                <p class="text-success mb-1">Special Price</p>
+                <p class="fs-3 fw-bold d-inline-block me-1">₹1,12,999</p><p class="d-inline-block text-decoration-line-through">₹1,17,995</p>
+                <p class="mb-1 fw-bold">Avaliable Offers</p>
+                <ul class="offer-list">
+                    <li class="fs-6"><i class="bi bi-tag-fill text-success"></i> Bank OfferExtra ₹2000 Off on Select Debit/Credit Cards T&C</li>
+                    <li><i class="bi bi-tag-fill text-success"></i> Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</li>
+                    <li><i class="bi bi-tag-fill text-success"></i> Special PriceGet extra 2% off (price inclusive of cashback/coupon)T&C</li>
+                    <li><i class="bi bi-tag-fill text-success"></i> Buy this Product and Get Extra ₹500 Off on Two-WheelersT&C</li>
+                </ul>
+                <a href="">View 5 more Offers</a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="container-fluid bg-dark second-footer">
+        <div class="row pt-5">
+            <div class="col-4">
+                <p class="text-secondary ms-2 mb-2">ABOUT</p>
+                <ul class="ps-2">
+                    <li><a href="">Contact us</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Flipkart Stories</a></li>
+                    <li><a href="">Press</a></li>
+                    <li><a href="">Flipkart Wholescale</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <p class="text-secondary ms-2 mb-2">HELP</p>
+                <ul class="ps-2">
+                    <li><a href="">Payments</a></li>
+                    <li><a href="">Shipping</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Report Problem</a></li>
+                    <li><a href="">Press</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <p class="text-secondary ms-2 mb-2">SOCIAL</p>
+                <ul class="ps-2">
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <p class="text-secondary ms-2 mb-2">Mail Us:</p>
+                <p class="text-light ms-2 mb-2">
+                    Flipkart Internet Private Limited,<br />
+                    Buildings Alyssa, Begonia &<br />
+                    Clove Embassy Tech Village,<br />
+                    Outer Ring Road, Devarabeesanahalli Village,<br />
+                    Bengaluru, 560103,<br />
+                    Karnataka, India<br />
+                </p>
+            </div>
+            <div class="col-6">
+                <p class="text-secondary ms-2 mb-2">Registered Office Address:</p>
+                <p class="text-light ms-2 mb-2">
+                    Flipkart Internet Private Limited,<br />
+                    Buildings Alyssa, Begonia &<br />
+                    Clove Embassy Tech Village,<br />
+                    Outer Ring Road, Devarabeesanahalli Village,<br />
+                    Bengaluru, 560103,<br />
+                    Karnataka, India<br />
+                    Telephone: 044-45614700<br />
+                </p>
+            </div>
+            <hr class="text-light" />
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-3">
+                        <span class="text-light"><i class="bi bi-briefcase-fill text-warning"></i> Become a
+                            Seller</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="text-light"><i class="bi bi-gift-fill text-warning"></i> Gift Cards</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="text-light"><i class="bi bi-question-octagon-fill text-warning"></i> Help
+                            Center</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="text-light"> ©2007-2023 Flipkart.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span class=""><img
+                        src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/payment-method_69e7ec.svg"
+                        alt=".." class="img-fluid" /></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+    integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+    integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+<script>
+    function showImages(p){
+        console.log(p.src)
+        document.getElementById('showeImageHere').src=p.src;
+    }
+</script>
+</html>

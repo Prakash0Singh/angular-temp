@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP's In JavaScript</title>
+  </head>
+  <body>
+    <script>
+      //-----Concept of OOP's:-
+          //1.Encapsulation
+          //2.Abstration
+          //3.Inheritance
+          //4.Polymorphism
+      //Class in JavaScript
+      //Overriding in Method & Constructors
+      //static Methods
+      //Getter and Setter
+      //Instanceof
+      //Prototype
+
+      //Object()
+      const objectCre = {
+        username: "prakash",
+        id: "45BNXY34",
+        password: "123prakash",
+        login: function (name, pass) {
+          if (name === this.username && pass === this.password) {
+            console.log("Login Successfully");
+          } else {
+            console.log("Wrong username or password please re-enter name and password");
+          }
+        },
+      };
+      console.log(objectCre);
+      // console.log(objectCre.__proto__="Hello World");
+      let objInher=Object.create(objectCre)
+      console.log(Object.create(objectCre))
+      objectCre.login("prakash", "pass");
+      objectCre.login("prakash", "123prakash");
+
+      //Class
+      class ClassCre {
+        constructor(name, id, password) {
+          this.username = name;
+          this.userid = id;
+          this.password = password;
+        }
+        login(name, pass) {
+          if (name === this.username && pass === this.password) {
+            console.log("Login Successfully !!!");
+            console.log(`user= ${this.username}, id=${this.userid}`);
+          }
+        }
+      }
+      const testingClass = new ClassCre("admin", "0001", "1234");
+      console.log(testingClass);
+      console.log(testingClass.username);
+      console.log(testingClass.login("admin", "1234")); //Calling Class function
+
+      const prakash = new ClassCre("prakash", 10, "0987");
+
+      //Inheritance in Class
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+        speak() {
+          console.log(`${this.name} make a noise`);
+        }
+        run() {
+          console.log(`${this.name} is running.`);
+        }
+        run(name1,name2){
+          console.log(`${name1} and ${name2} both are running.`);
+        }
+      }
+      class Dog extends Animal {
+        eat() {
+          console.log(`${this.name} is eating.`);
+        }
+        hide(){
+            console.log(`${this.name} is hiding.`)
+        }
+        speak() {
+          console.log(`Simple noise`);
+        }
+      }
+      let pet = new Dog("Tommy");
+      console.log(pet);
+      pet.speak();
+      pet.eat();
+      pet.hide()
+      pet.run("Ram","Shaym")
+      
+      console.log('-----------Method Overlridding')
+      //Method Overriding 
+      class Employee{
+        constructor(){
+            console.log(`Employee Constructor is automatically because Programmer doesn't have constuctor and by default it call extended class constructor`)
+        }
+        login(){
+            console.log(`Employee login successfully !!!`);
+        }
+        logout(){
+            console.log(`Employee logout successfully !!!`);
+        }
+        leaves(days){
+            console.log(`Requesting for ${days} leaves.`)
+        }
+      }
+      class Programmer extends Employee{
+        //If there is no constuctor in the child class then,this is created automatically !!!!
+        // constructor(...argus){
+        //     super(...argus)
+        // }
+        //If we creating constructor in child class then we have to use super() before using 'this' method
+        coffee(x){
+            console.log(`Requesting for ${x} cup Coffee.`)
+        }
+        leaves(days){
+            super.leaves(days);
+            console.log(`one extra leave is also alloated.`)
+        }
+      }
+      let testingUser =new Programmer();
+      testingUser.coffee(3);
+      //leaves() Programmer class method is being called
+      testingUser.leaves(7);
+      console.log("--------------Static Method")
+
+      //static Methods
+      class Democlass{
+        constructor(name){
+            this.name=Democlass.captialize(name);
+        }
+        dancing(){
+            console.log(`${this.name} is dancing.`);
+        }
+        static captialize(name){
+            return name.toUpperCase()
+        }
+      }
+      let testing1= new Democlass('mad-max')
+      testing1.dancing()
+
+      //using captialie() static method with calss directly
+      console.log(Democlass.captialize("Prakash"))
+      console.log("------------Instanceof");
+      //Instanceof
+      class A{
+        constructor(name)
+        {
+            this.name=name;
+        }
+        welcome(){
+            console.log(`${this.name} Hello World!!`)
+        }
+      }
+      class B extends A{
+        hello(){
+            console.log(`${this.name} Hello World in Class B`);
+        }
+      }
+      let a=new B(Democlass.captialize("harry"))
+      a.hello();
+      a.welcome();
+      console.log(a instanceof A);
+      console.log(a instanceof B);
+      console.log("----------Getter & Setter in Objects");
+      //getter & setter in objects
+      let demouser={
+        name:"John",
+        surname:"Cena",
+
+        get fullName(){
+            return `${this.name} ${this.surname}` ;
+        },
+        set fullName(value){
+          if (value.length>8) {
+            [this.name,this.surname]=value.split(" ");
+          }
+          else{
+            console.log("Too short full name.....");
+          }
+        } 
+      }
+      console.log(demouser.fullName);
+      demouser.fullName="Mad Max";
+      console.log(demouser.fullName);
+      console.log("------------Getter & Setter in Class");
+
+      //getter & setter in Class
+
+      class C{
+        constructor(name){
+            this._name=name;
+        }
+        fly(){
+            console.log(`${this._name} is Flying.`);
+        }
+        get name(){
+            return this._name
+        }
+        set name(value){
+            this._name=value
+        }
+      }
+      let d= new C("Tony")
+      d.fly()
+      console.log(d.name);
+      d.name="Peter"
+      d.fly()
+      console.log(d.name);
+
+
+      class E{
+        flying(){
+            console.log("Flying in Sky !!!");
+        }
+      }
+      let e=new E;
+      e.flying();
+      //Encapsulation
+class Student
+  {
+    constructor()
+    {
+       var name;
+       var marks;
+    }
+        getName()
+        {
+          return this.name;
+        }
+        getMarks()
+        {
+          return this.marks;
+        }
+    setName(name)
+    {
+        this.name=name;
+    }
+    setMarks(marks)
+    {
+        if(marks>0)
+        {
+            this.marks=marks;
+        }
+      else
+        {
+            alert("Invalid Marks");
+        }
+    }
+    }
+    var stud=new Student();
+     stud.setName("John");
+     stud.setMarks(10);//alert() invokes
+     document.writeln(stud.getName()+" "+stud.getMarks());
+    </script>
+  </body>
+</html>

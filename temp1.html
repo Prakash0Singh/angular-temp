@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<style>
+    #explore-more {
+        height: 400px;
+        background-image: url("window.jpg");
+        background-size: cover;
+    }
+    #counter-box{
+        height: 400px;
+    }
+    .services{
+        height: 450px;
+    }
+    .list-button:hover{
+        font-size: 20px !important;
+    }
+    .arrow{
+    position: absolute;
+   
+    right: -14px;
+    font-size: 23px
+    }
+    #interID{
+        top: 81px;
+    }
+    #concID{
+        top:129px
+    }
+    #resiID{
+        top: 174px;
+    }
+    #hospID{
+        top:219px
+    }
+    .bgc{
+        background-color: black ;
+    }
+    #owl-one .item img{
+        opacity: 0.4;
+    }
+    #owl-one .item img:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .t{
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .verticle img{
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: fill;
+    }
+    .getstarted{
+        background-image: url("https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        height: 300px;
+        background-position: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .txt-1{
+        position: absolute;
+        bottom: 20px;
+        left: 35px;
+        color: white;
+        display: none;
+    }
+    .zoom img{
+        transition: transform .3s;
+        filter: brightness(60%);
+    }
+    .zoom img:hover .txt-1{
+        display:none;
+    }
+    .zoom img:hover{
+        cursor: pointer;
+        transform: scale(0.9);
+        filter: brightness(100%);
+    }
+    .getMore{
+        background-color: rgb(27, 26, 26);
+        color: white
+    }
+    .getMore:hover{
+        cursor: pointer;
+        background-color: white;
+        color: black;
+    }
+    .social-btn{
+        background-color: rgba(128, 128, 128, 0.373);
+        color: rgb(181, 172, 172);
+        padding: 7px 14px;
+        border-radius: 20px;
+        border: 0;
+    }
+    .social-btn i{
+        font-size: 25px;
+    }
+    .social-btn:hover{
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- owl carousel -->
+            <div class="col-12 p-0">
+                <div class="owl-carousel owl-theme" id="owl-one">
+                    <div class="item position-relative bgc">
+                        <img src="https://images.pexels.com/photos/1461264/pexels-photo-1461264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="...">
+                        <p class="text-center text-light t ms-2">#1 ARCHITECTURE</p>
+                    </div>
+                    <div class="item bgc">
+                        <img src="https://images.pexels.com/photos/804605/pexels-photo-804605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="..">
+                        <p class="text-center text-light t ms-2">#2 CAVES ROOM's</p>
+                    </div>
+                    <div class="item bgc">
+                        <img src="https://images.pexels.com/photos/1115255/pexels-photo-1115255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="...">
+                        <p class="text-center text-light t ms-2">#3 TOP HOTEL Inn.</p>
+                    </div>
+                    <div class="item bgc">
+                        <img src="https://images.pexels.com/photos/12365978/pexels-photo-12365978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="...">
+                        <p class="text-center text-light t ms-2">#4 AMAZING VIEW</p>
+                    </div>
+                  
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="container">
+                <div class="row">
+            <!-- States. -->
+            <div class="col-sm-7">
+                <div class="d-flex justify-content-center align-items-center" id="counter-box">
+                <div class="row mt-5 mb-5">
+                    <div class="col-sm-6">
+                        <h4 class="">800</h4>
+                        <p class="">FINISHED PROJECTS</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4 class="">960</h4>
+                        <p class="">HAPPY CUSTOMER</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4 class="">1,200</h4>
+                        <p class="">WORKING HOURS</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4 class="">850</h4>
+                        <p class="">CUP OF COFFEE</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="d-flex justify-content-center align-items-center" id="explore-more">
+                <button type="button" class="btn btn-light text-dark ">
+                    Explore More
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+            <div class="container-fluid mb-5">
+                <div class="row">
+            <!-- Servieces -->
+            <div class="col-12 col-sm-6 services bg-dark pe-0 mt-1">
+                <div class="mt-5 position-relative">
+                <h3 class="text-light text-center mb-5 ">SERVICES</h3>
+               <a class="btn text-light fs-6 px-5 mb-2 list-button d-block border-0" onclick="inte()"><i class="bi bi-bricks pe-2"></i> INTERIOR </a>
+               <i class="bi-caret-right-fill arrow" id="interID"></i>
+               <a class="btn text-light fs-6 px-5 mb-2 list-button d-block border-0" onclick="conc()"><i class="bi bi-lightbulb pe-2"></i> CONCEPT</a>
+               <i class="bi-caret-right-fill arrow d-none" id="concID"></i>
+               <a class="btn text-light fs-6 px-5 mb-2 list-button d-block border-0" onclick="resi()"><i class="bi bi-building pe-2"></i> RESIDENTAL</a>
+               <i class="bi-caret-right-fill arrow d-none" id="resiID"></i>
+               <a class="btn text-light fs-6 px-5 mb-2 list-button d-block border-0" onclick="hosp()"><i class="bi bi-hospital pe-2"></i> HOSPITALITY</a>
+               <i class="bi-caret-right-fill arrow d-none" id="hospID"></i>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 services bg-light">
+                <div class="ms-5">
+                    <p class=" mt-5 fs-1" id="ico"><i class="bi bi-bricks"></i></p>
+                    <p class="mt-3 fs-2" id="tit">Interior Design</p>
+                    <div class="w-75 mb-3">
+                        <p class="mt-3 fs-6 text-muted" id="txt">Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis.</p>
+                    </div>
+                    <button class="bg-dark text-light px-4 py-2 mt-4">Learn More</button>
+                </div>
+            </div>
+            <div class="col-6">
+            </div>
+            <div class="col-sm-6 getstarted">
+                <p class="fs-3 text-light">Get Started</p>
+                <div>
+                <button type="button" class="btn btn-light text-dark py-3 px-3 me-5">Request a quote</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-md-4 verticle">
+                <h5>PORTFOLIO</h5>
+                <p class="text-muted mb-4">Far far away, behind the word mountains, far from the countries Vokalia</p>
+                <div class="row">
+                    <div class="col-12 verticle mb-4 position-relative zoom">
+                        <img src="https://preview.colorlib.com/theme/tough/images/image_3.jpg.webp" alt="..." class="img-fluid">
+                        <div class="txt-1">
+                        <p class="text-muted">Residence</p>
+                        <p class="m-0 ">WORK 01</p>
+                        </div>
+                    </div>
+                    <div class="col-12 verticle mb-4  position-relative zoom">
+                        <img src="https://preview.colorlib.com/theme/tough/images/image_2.jpg.webp" alt="..." class="img-fluid">
+                        <div class="txt-1">
+                        <p class=" text-muted">Residence</p>
+                        <p class="m-0">WORK 02</p>
+                        </div>
+                    </div>
+                    <div class="col-12 verticle  position-relative zoom">
+                        <img src="https://preview.colorlib.com/theme/tough/images/image_9.jpg.webp" alt="..."class="img-fluid" style="height: 205px !important; width: 100% !important; margin-bottom: 10px;"  >
+                        <div class="txt-1">
+                        <p class="text-muted">Residence</p>
+                        <p class="m-0">WORK 03</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row mt-3">
+                <div class="col-12 position-relative zoom mb-4">
+                    <img src="https://preview.colorlib.com/theme/tough/images/image_1.jpg" alt="..." class="img-fluid" >
+                    <div class="txt-1">
+                    <p class="text-muted">Residence</p>
+                    <p class="m-0">WORK 04</p>
+                    </div>
+                </div>
+            <div class="row mb-4 pe-0">
+                <div class="col-sm-6  mb-4 mb-sm-0 pe-0 position-relative zoom"><img src="https://preview.colorlib.com/theme/tough/images/image_5.jpg" alt="..." class="img-fluid">
+                    <div class="txt-1">
+                    <p class="text-muted">Residence</p>
+                    <p class="m-0">WORK 05</p>
+                </div>
+                </div>
+                <div class="col-sm-6 pe-0 position-relative zoom"><img src="https://preview.colorlib.com/theme/tough/images/image_6.jpg" alt="..." class="img-fluid">
+                    <div class="txt-1">
+                    <p class="text-muted">Residence</p>
+                    <p class="m-0">WORK 06</p>
+                </div>
+            </div>
+            </div>
+            <div class="row  pe-0">
+                <div class="col-sm-7 mb-4 mb-sm-0 pe-0 position-relative zoom"><img src="https://preview.colorlib.com/theme/tough/images/image_7.jpg" alt="..." class="img-fluid" style="height: 293px !important; width: 100% !important;">
+                    <div class="txt-1">
+                    <p class=" text-muted">Residence</p>
+                    <p class="m-0 ">WORK 07</p>
+                    </div>
+                </div>
+                <div class="col-sm-5 mb-4 mb-sm-0 pe-0 position-relative zoom">
+                    <img src="https://preview.colorlib.com/theme/tough/images/image_4.jpg.webp" alt="..." class="img-fluid" style="height: 293px !important; width: 100% !important;">
+                    <div class="txt-1">
+                    <p class=" text-muted">Residence</p>
+                    <p class="m-0">WORK 08</p>
+                </div>
+                    </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5  mb-5">
+        <div class="row pt-5">
+            <div class="col-md-4 bg-dark mb-5 mb-md-0">
+                <div class="mt-5 mb-5">
+                    <p class="fs-3 fw-bold text-light text-center">CLIENTS SAYS</p>
+                    <p class="ms-2 text-light">Far far away, behind the word mountains, far from the countries Vokalia</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+   
+    <div class="owl-carousel owl-theme" id="owl-two">
+        <div class="item card ms-2 me-2">
+            <div class="ms-2 me-1" style="height: 500px;">
+                <div class=" d-flex align-items-center justify-content-center mb-2 flex-column flex-wrap mt-5">
+                    <div class="position-relative">
+                    <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Profile-image" style=" width: 100px;" height="100px" class="rounded-circle mb-3 mt-2 ">
+                    <span class="position-absolute bottom-0 start-100 translate-middle badge bg-success" style="border-radius: 25px;">
+                        <i class="bi bi-quote  fs-5" style="padding: 3px 0px;"></i>
+                      </span>
+                    </div>
+                    <p class="text-center m-0 mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+                <p class="text-center text-success">Dennis Green</p>
+                <p class="text-muted text-center">Architect</p>
+            </div>
+        </div>
+        <div class="item card ms-2 me-2">
+            <div class="ms-2 me-1" style="height: 500px;">
+                <div class=" d-flex align-items-center justify-content-center mb-2 flex-column flex-wrap mt-5">
+                    <div class="position-relative">
+                    <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Profile-image" style=" width: 100px;" height="100px" class="rounded-circle mb-3 mt-2">
+                    <span class="position-absolute bottom-0 start-100 translate-middle badge bg-success" style="border-radius: 25px;">
+                        <i class="bi bi-quote  fs-5" style="padding: 3px 0px;"></i>
+                      </span>
+                      </div>
+                    <p class="text-center m-0 mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+                <p class="text-center text-success">Dennis Green</p>
+                <p class="text-muted text-center">Architect</p>
+            </div>
+        </div>
+        <div class="item card ms-2 me-2">
+            <div class="ms-2 me-1" style="height: 500px;">
+                <div class=" d-flex align-items-center justify-content-center mb-2 flex-column flex-wrap mt-5">
+                    <div class="position-relative">
+                    <img src="https://randomuser.me/api/portraits/women/49.jpg" alt="Profile-image" style=" width: 100px;" height="100px" class="rounded-circle mb-3 mt-2">
+                    <span class="position-absolute bottom-0 start-100 translate-middle badge bg-success" style="border-radius: 25px;">
+                        <i class="bi bi-quote  fs-5" style="padding: 3px 0px;"></i>
+                      </span>
+                    </div>
+                    <p class="text-center m-0 mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+                <p class="text-center text-success">Dennis Green</p>
+                <p class="text-muted text-center">Architect</p>
+            </div>
+        </div>
+        <div class="item card ms-2 me-2" >
+            <div class="ms-2 me-1" style="height: 500px;">
+                <div class=" d-flex align-items-center justify-content-center mb-2 flex-column flex-wrap mt-5">
+                    <div class="position-relative">
+                    <img src="75.jpg" alt="Profile-image" style=" width: 100px;" height="100px" class="rounded-circle mb-3 mt-2">
+                    <span class="position-absolute bottom-0 start-100 translate-middle badge bg-success" style="border-radius: 25px;">
+                        <i class="bi bi-quote  fs-5" style="padding: 3px 0px;"></i>
+                      </span>
+                    </div>
+                    <p class="text-center m-0 mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+                <p class="text-center text-success">Dennis Green</p>
+                <p class="text-muted text-center">Architect</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col-md-4 mb-5 mb-md-0 mt-5">
+            <div class="card">
+                <i class="bi bi-buildings display-1 mx-auto text-success mt-3"></i>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Basic Plan</h5>
+                    <p class="text-center mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
+                    <p class="fs-3 text-center">$29<span class="fs-6"> per month</span></p>
+                <div class="d-flex justify-content-center ">
+                    <button class="px-4 py-2 getMore"> Get Started</button>
+                </div>
+                <p class="text-center text-success mt-4">Open Source</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5 mb-md-0 mt-0 mt-md-5">
+            <div class="card">
+                <i class="bi bi-buildings display-1 mx-auto text-success mt-3"></i>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Standard Plan</h5>
+                    <p class="text-center mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
+                    <p class="fs-3 text-center">$29<span class="fs-6"> per month</span></p>
+                <div class="d-flex justify-content-center ">
+                    <button class="px-4 py-2 getMore"> Get Started</button>
+                </div>
+                <p class="text-center text-success mt-4">Open Source</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5 mb-md-0 mt-0 mt-md-5">
+            <div class="card">
+                <i class="bi bi-buildings display-1 mx-auto text-success mt-3"></i>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Premium Plan</h5>
+                    <p class="text-center mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
+                    <p class="fs-3 text-center">$29<span class="fs-6"> per month</span></p>
+                    <div class="d-flex justify-content-center ">
+                    <button class=" px-4 py-2 getMore"> Get Started</button>
+                </div>
+                <p class="text-center text-success mt-4">Open Source</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container-fluid" style="margin-top: 135px;">
+    <div class="row">
+        <div class="col-12 bg-dark " style="padding: 5rem 0;">
+            <div class="d-flex justify-content-center mb-4" >
+                <button class="social-btn mx-2" ><i class="bi bi-twitter"></i></button>
+                <button class="social-btn mx-2" ><i class="bi bi-facebook"></i></button>
+                <button class="social-btn mx-2" ><i class="bi bi-instagram"></i></button>
+            </div>
+            <h4 class="text-light text-center fw-light">CONTACT US</h4>
+            <p class="text-center text-light">info@email.com</p>
+            <p class="text-center text-light mt-5">Copyright ©2023 All rights reserved | This template is made with 💜 by Prakash Singh</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function () {
+    $('#owl-one').owlCarousel({
+        loop:true,
+        margin:0,
+        dots:false,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout:2000,
+        responsiveClass:true,
+        responsive:{
+        0:{
+            items:1,
+        },
+        600:{
+            items:2,
+        },
+        760:{
+            items:3,
+        }
+    } 
+    })
+})
+$(document).ready(function () {
+    $('#owl-two').owlCarousel({
+    margin:0,
+    loop:true,
+    nav:false,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:2000,
+    responsive:{
+        0:{
+            items:1,
+        },
+        440:{
+            items:2,
+        }
+    }
+})
+})
+    start()
+    window.addEventListener('resize', start);
+    function start() {
+        if (screen.width<576) {
+        document.getElementById('concID').classList.add("d-none");
+        document.getElementById('interID').classList.add("d-none");
+        document.getElementById('resiID').classList.add("d-none");
+        document.getElementById('hospID').classList.add("d-none");
+        
+    }
+    }
+    let icon=document.getElementById("ico");
+    let titel=document.getElementById("tit");
+
+    function inte() {
+        if (screen.width<576) {
+        document.getElementById('interID').classList.add("d-none");
+    }
+    else
+      document.getElementById('interID').classList.remove("d-none");
+
+      document.getElementById('hospID').classList.add('d-none')
+      document.getElementById('concID').classList.add('d-none')
+      document.getElementById('resiID').classList.add('d-none')
+      icon.innerHTML=`<i class="bi bi-bricks"></i>`;
+      titel.innerHTML=`Interior Design`
+    }
+    function conc() {
+        if (screen.width<576) {
+        document.getElementById('concID').classList.add("d-none");
+    }else
+        document.getElementById('concID').classList.remove('d-none');
+
+      document.getElementById('interID').classList.add('d-none')
+      document.getElementById('hospID').classList.add('d-none')
+      document.getElementById('resiID').classList.add('d-none')
+
+        icon.innerHTML=`<i class="bi bi-lightbulb"></i>`;
+        titel.innerHTML=`Concept Design`;
+    }
+    function resi() {
+        if (screen.width<576) {
+        document.getElementById('resiID').classList.add("d-none");
+    }else
+        document.getElementById('resiID').classList.remove('d-none')
+        document.getElementById('interID').classList.add('d-none')
+      document.getElementById('hospID').classList.add('d-none')
+      document.getElementById('concID').classList.add('d-none')
+        icon.innerHTML=`<i class="bi bi-building"></i>`;
+        titel.innerHTML=`Residential Design`;
+    }
+    function hosp() {
+        if (screen.width<576) {
+        document.getElementById('hospID').classList.add("d-none");
+    }else
+        document.getElementById('hospID').classList.remove('d-none')
+      document.getElementById('resiID').classList.add('d-none')
+        document.getElementById('interID').classList.add('d-none')
+      document.getElementById('concID').classList.add('d-none')
+        icon.innerHTML=`<i class="bi bi-hospital"></i>`;
+        titel.innerHTML=`Hospitality Design`;
+    }
+</script>
+</html>

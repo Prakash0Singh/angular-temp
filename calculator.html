@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Calculator</title>
+    <style>
+      #calBox {
+        background-color: rgb(198 198 198);
+        border-radius: 25px;
+        border: 2px solid rgb(0 0 0);
+      }
+      .numberBtn {
+        margin: 5px 0px;
+        height: 55px;
+        width: 100%;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2 class="text-center mt-3">Calculator Using Html, Css and JavaScript</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-4 mx-auto mt-5" id="calBox">
+          <div class="row">
+            <div class="col-12 mb-3 mt-4">
+              <input
+                type="text"
+                id="inputValue"
+                disabled
+                class="p-3 fs-5"
+                style="width: 75%; height: 50px"
+              />
+              <input
+                type="button"
+                value="C"
+                onclick="clearValue()"
+                class="fs-5 bg-danger text-light"
+                style="width: 22%; height: 50px"
+              />
+            </div>
+            <div class="col-3 mx-auto d-flex">
+              <input
+                type="button"
+                value="+"
+                onclick="display(this)"
+                class="fs-5 numberBtn bg-dark text-light"
+              />
+            </div>
+            <div class="col-3 mx-auto d-flex justify-content-center">
+              <input
+                type="button"
+                value="-"
+                onclick="display(this)"
+                class="fs-5 numberBtn bg-dark text-light"
+              />
+            </div>
+            <div class="col-3 mx-auto d-flex justify-content-center">
+              <input
+                type="button"
+                value="*"
+                onclick="display(this)"
+                class="fs-5 numberBtn bg-dark text-light"
+              />
+            </div>
+            <div class="col-3 mx-auto d-flex justify-content-end">
+              <input
+                type="button"
+                value="/"
+                onclick="display(this)"
+                class="fs-5 numberBtn bg-dark text-light"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex">
+              <input
+                type="button"
+                value="7"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-center">
+              <input
+                type="button"
+                value="8"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-end">
+              <input
+                type="button"
+                value="9"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex">
+              <input
+                type="button"
+                value="4"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-center">
+              <input
+                type="button"
+                value="5"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-end">
+              <input
+                type="button"
+                value="6"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex">
+              <input
+                type="button"
+                value="1"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-center">
+              <input
+                type="button"
+                value="2"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-end">
+              <input
+                type="button"
+                value="3"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex">
+              <input
+                type="button"
+                value="0"
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-center">
+              <input
+                type="button"
+                value="."
+                onclick="display(this)"
+                class="fs-5 numberBtn"
+              />
+            </div>
+            <div class="col-4 mx-auto d-flex justify-content-end mb-2">
+              <input
+                type="button"
+                value="="
+                onclick="calculate()"
+                class="fs-5 numberBtn bg-dark text-light"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function clearValue() {
+    document.getElementById("inputValue").value = "";
+  }
+  function display(para) {
+    demo = para.value;
+    document.getElementById("inputValue").value += para.value;
+  }
+  function calculate() {
+    var p = document.getElementById("inputValue").value;
+    var q = eval(p);
+    document.getElementById("inputValue").value = q;
+  }
+</script>

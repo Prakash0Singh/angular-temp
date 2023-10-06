@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Practise</title>
+</head>
+<body>
+    Fill and Hallow Patterns :-<br>
+    Square, Rectangel<br>
+    Right & Left Triangle<br>
+    Right & Left Pyscal <br>
+    Pyramid, Reverse Pyramid<br>
+    <script>
+        // Right Triangle and Hallow
+        console.log("---------Right Triangle");
+        const l=10;
+        let rightTri="";
+        for (let i = 1; i <l; i++) {
+            for (let j = 1; j <l-i; j++) {
+                rightTri+="-"
+            }
+            for (let k = 0; k <i; k++) {
+                rightTri+="*"
+            }
+            rightTri+="\n";
+        }
+        console.log(rightTri);
+
+        console.log("---------Hallow Right Triangle");
+
+        rightTri="";
+        for (let i = 1; i <l; i++) {
+            for (let j = 1; j <l-i; j++) {
+                rightTri+="-"
+            }
+            for (let k = 1; k <l; k++) {
+                if (k===1||i==l-1||k===i) {
+                    rightTri+="*"
+                }
+                else{
+                    rightTri+=" "
+                }
+            }
+            rightTri+="\n"
+        }
+        console.log(rightTri);
+
+        console.log("---------Left Triangle");
+        rightTri="";
+        
+        for (let i = 1; i < l; i++) {
+            for (let j = 1; j <i; j++) {
+                rightTri+="*"
+            }
+            rightTri+="\n"
+        }
+        console.log(rightTri);
+
+        console.log("---------Hallow Left Triangle");
+        rightTri="";
+        
+        for (let i = 1; i < l; i++) {
+            for (let j = 1; j <i; j++) {
+                if (j==1||j==i-1||i==l-1) {
+                    rightTri+="*"
+                }
+                else{
+                    rightTri+=" "
+                }
+            }
+            rightTri+="\n"
+        }
+        console.log(rightTri);
+
+        console.log("---------Right Pyscal");
+        rightTri="";
+        
+        for (let i = 1; i < l; i++) {
+            for (let j = 1; j <i; j++) {
+                rightTri+="*"
+            }
+            rightTri+="\n"
+        }
+        for (let i = 1; i < l; i++) {
+            for (let j = 1; j <l-i; j++) {
+                rightTri+="*"
+            }
+            rightTri+="\n"
+        }
+        console.log(rightTri);
+
+        console.log("---------Left Pyscal");
+        rightTri="";
+        
+        for (let i = 1; i < l; i++) {
+            for (let j = 1; j <l-i; j++) {
+                rightTri+="-"
+            }
+            for (let k = 0; k <i; k++) {
+                rightTri+="*"
+            }
+            rightTri+="\n"
+        }
+        for (let i = 1; i <l; i++) {
+            for (let j = 1; j <i; j++) {
+                rightTri+="-"
+            }
+            for (let k = 0; k <l-i; k++) {
+                rightTri+="*"
+            }
+            rightTri+="\n"
+        }
+        console.log(rightTri);
+
+        console.log("---------Pyramid");
+        rightTri="";
+
+        for (let i = 1; i < l; i++) {
+            for (let j = 1; j <l-i; j++) {
+                rightTri+="-"       
+            }            
+            for (let k = 1; k <2*i; k++) {
+                if (k==1||k==(2*i)-1||i==l-1) {
+                    rightTri+="*"
+                }
+                else rightTri+=" "
+            }
+            rightTri+="\n"
+        }
+        console.log(rightTri);
+        
+        console.log("---------Reverse Pyramid");
+        rightTri="";
+
+        for (let i = 1; i <l; i++) {
+            for (let j = 1; j <i; j++) {
+                rightTri+="-"   
+            }
+            for (let k = 1; k <2*(l-i); k++) {
+                if (k==1||k==2*(l-i)-1||i==1) {
+                    rightTri+="*"        
+                }
+                else rightTri+=" "
+            }   
+            rightTri+="\n"         
+        }
+        console.log(rightTri);
+
+        console.log("---------Rectangle");
+        rightTri="";
+        for (let i = 1; i <l; i++) {
+            for (let j = 1; j <l; j++) {
+                if (j==1||i==1||i==l-1||j==l-1) {
+                    rightTri+="*"               
+                }
+                else rightTri+=" "
+            }
+            rightTri+="\n"            
+        }
+        console.log(rightTri)
+
+        let a=10;
+        name="";
+        
+        for(i=1;i<a;i++){
+            for(j=1;j<a-i;j++){
+                name+="-"
+            }
+            for(k=1;k<i;k++)
+            {
+                if(k==1||k==i-1)
+                name+="*"
+                else
+                name+=" "
+            }
+            name+="\n";
+        }
+        for(i=1;i<a;i++){
+            for(j=1;j<i;j++){
+                name+="-"
+            }
+            for(k=1;k<a-i;k++)
+            {
+                if(k==1||k==(a-i)-1)
+                name+="*"
+                else name+=" "
+            }
+            name+="\n"
+        }
+        console.log(name);
+
+        name="";
+        for(i=1;i<a;i++){
+            for(j=1;j<i;j++)
+            {
+                name+="*";
+            }
+            name+="\n"
+        }
+        for(i=1;i<a;i++)
+        {
+            for(j=1;j<a-i;j++)
+            {
+                name+="*"
+            }
+            name+="\n"
+        }
+        console.log(name);
+
+        console.log("---------Diamond");
+        let pyramid="";
+        for(i=1;i<a;i++){
+            for(j=1;j<a-i;j++){
+                pyramid+="-"
+            }
+            for(k=1;k<2*i;k++){
+                pyramid+="*"
+            }
+            pyramid+="\n"
+        }
+        for(i=1;i<a;i++){
+            for(j=1;j<i;j++)
+            {
+                pyramid+="-"
+            }
+            for(k=1;k<2*(a-i);k++){
+                pyramid+="*"
+            }
+            pyramid+="\n"
+        }
+        console.log(pyramid);
+
+        let pascal="";
+        for(i=1;i<a;i++){
+            for(j=1;j<i;j++)
+            {
+                if(j==1||j==i-1)
+                pascal+="*"
+                
+                else
+                pascal+=" "
+            }
+            pascal+="\n"
+        }
+        for(i=1;i<a;i++){
+            for(j=1;j<a-i;j++)
+            {
+                if(j==1||j==(a-i)-1)
+                pascal+="*"
+                else
+                pascal+=" "
+            }
+            pascal+="\n"
+        }
+        console.log(pascal)
+        let p="";
+
+        for(i=1;i<a;i++){
+            for(j=1;j<a-i;j++){
+                p+=" ";
+            }
+            for(k=1;k<2*i;k++)
+            {
+                if(k==1||k==(2*i)-1)
+                p+="*";
+                else
+                p+=" "
+            }
+        p+="\n"
+        }
+        for(i=1;i<a;i++){
+            for(j=1;j<i;j++){
+                p+=" ";
+            }
+            for(k=1;k<2*(a-i);k++)
+            {
+                if(k==1||k==(2*(a-i)-1))
+                p+="*"
+                else
+                p+=" "
+            }
+        p+="\n"
+        }
+        console.log(p)
+
+        let vb="";
+        for(i=1;i<a/2;i++)
+        {
+            for(j=1;j<a/2-i;j++)
+            {
+                vb+="-"
+            }
+            for(k=1;k<2*i;k++)
+            {
+                vb+="*"
+            }
+
+            for(j=1;j<2*(a/2-i);j++)
+            {
+                vb+="-"
+            }
+            for(k=1;k<2*i;k++){
+                vb+="*"
+            }
+            vb+="\n"
+        }
+        for(i=2;i<a;i++){
+            for(j=1;j<i;j++){
+                vb+="-"
+            }
+            for(k=1;k<2*(a-i);k++)
+            {
+                vb+="*"
+            }
+            vb+="\n"
+        }
+        console.log(vb)
+
+        let gao=""
+        for(i=1;i<=a;i++){
+            for(j=1;j<i;j++){
+                gao+="*"
+            }
+            for(k=1;k<=a-i;k++){
+                gao+=" "
+            }
+            gao+="\t"
+            for(j=1;j<=a-i;j++)
+            {
+                gao+="*"
+            }
+            gao+="\n"
+        }
+        console.log(gao);
+
+        let dhg="";
+        for(i=1;i<a;i++)
+        {
+            for(j=1;j<a-i;j++)
+            {
+                dhg+=" "
+            }
+            for(k=1;k<i;k++)
+            {
+                dhg+="*"
+            }
+            dhg+="\t"
+            for(j=1;j<i;j++)
+            {
+                dhg+=" "
+            }
+            for(k=1;k<a-i;k++)
+            {
+                dhg+="*"
+            }
+            dhg+="\n"
+        }
+        console.log(dhg);
+        let ao="";
+        for(i=1;i<a;i++)
+        {
+            for(j=1;j<a;j++){
+                if(i+j>=a)
+                {
+                    ao+="*"
+                }
+            
+            }
+            ao+="\n"
+        }
+        console.log(ao);
+        const hello={
+            a:"hello",
+            b:"world",
+        }
+        const task=Object.create(hello);
+        task.msg="in JavaScript";
+        for (const key in task) {
+            console.log(key)
+        }
+        // for (const iterator of task) { console.log(iterator) } ---error b/c object is not iterable
+    </script>
+</body>
+</html>

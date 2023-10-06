@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: rgb(195, 150, 150);
+    }
+    .nav-item a:hover {
+      color: white;
+    }
+    .navbar-lists {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .navbar-lists li {
+      padding: 0 10px;
+    }
+    .imagefix{
+      width: 100%;
+      height: auto;
+    }
+    .arrows {
+      font-size: large;
+    }
+    .carousel-item img {
+      max-height: 550px;
+    }
+    #buttonss {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      bottom: 10px;
+      left: 30px;
+    }
+    .arrowButton {
+      height: 60px;
+      width: 60px;
+      border-width: 5px;
+      border-radius: 50px;
+      background-color: rgb(239, 61, 36);
+      border-color: white;
+    }
+    .bi-tv,
+    .bi-hdd-network,
+    .bi-tablet {
+      font-size: 75px;
+    }
+    #channelBtn:hover {
+      background-color: black !important;
+      color: white;
+    }
+    .specialHover {
+      color: white;
+      background-color: black;
+    }
+    .specialHover:hover {
+      color: black;
+      background-color: white;
+    }
+   input[type="email"]{
+    min-width:112px;
+   }
+   .email-box{
+    min-height: 300px;
+   }
+   .borderLine{
+    border-top: 2px solid black;
+   }
+   .first-email{
+    width: 100%;
+    height: 50px;
+   }
+   #subscribe-email{
+    width: 100%;
+    height: 35px;
+    border-radius: 25px;
+    border: 0px;
+    margin-top: 7px;
+   }
+   input::-webkit-input-placeholder {
+        text-align: center;
+      }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-semibold fs-4" href="#">Dicet TV</a>
+        <div>
+          <ul class="navbar-nav mb-2 navbar-lists">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="#">PRODUCT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="#">BLOG</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="#">CONTACT US</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Carousel -->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide position-relative;"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active md-px-5">
+          <img
+            src="https://images.unsplash.com/photo-1665686310974-2ed1eb7f57ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            class="w-100 imagefix"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item md-px-5">
+          <img
+            src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            class="w-100 imagefix"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item md-px-5">
+          <img
+            src="https://images.unsplash.com/photo-1661961110218-35af7210f803?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            class="w-100 imagefix"
+            alt="..."
+          />
+        </div>
+      </div>
+      <div id="buttonss">
+        <button
+          class="arrowButton"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <i class="bi bi-arrow-left arrows text-dark"></i>
+        </button>
+        <button
+          class="arrowButton"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <i class="bi bi-arrow-right arrows text-light"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Carousel -->
+    <!-- Card Container -->
+    <div class="container-fluid d-flex justify-content-around mt-5">
+      <div class="row mx-auto">
+        <div class="col-sm-6 col-md-4 mx-auto mb-4">
+          <div class="card specialHover">
+            <div class="card-body">
+              <p class="text-center"><i class="bi bi-tv"></i></p>
+              <h5 class="card-title text-center">Broadband</h5>
+              <p class="card-text">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, m Ipsum,
+                you need to be
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 mx-auto mb-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="text-center">
+                <i class="bi bi-hdd-network text-center"></i>
+              </p>
+              <h5 class="card-title text-center">Broadband</h5>
+              <p class="card-text">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, m Ipsum,
+                you need to be
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 mx-auto mb-4">
+          <div class="card specialHover">
+            <div class="card-body">
+              <p class="text-center">
+                <i class="bi bi-tablet text-center"></i>
+              </p>
+              <h5 class="card-title text-center">Broadband</h5>
+              <p class="card-text">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, m Ipsum,
+                you need to be
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Card Container -->
+
+    <!-- Image & Detail Container -->
+    <div class="container mt-5 d-flex">
+      <div class="row">
+        <div class="col-12 col-md-6 order-2 order-md-1">
+          <img
+            src="https://images.pexels.com/photos/7849520/pexels-photo-7849520.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="..."
+            class="img-fluid"
+          />
+        </div>
+        <div
+          class="col-12 col-md-6 order-1 order-md-2 mb-5 d-flex flex-column justify-content-center"
+        >
+          <h4>Live Sport and TV-shows for bestfriends</h4>
+          <p>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters
+          </p>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn bg-danger fw-bold">
+              4K Ultra HD Quality
+            </button>
+            <button type="button" id="channelBtn" class="btn bg-danger fw-bold">
+              200+ Online Channels
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Image & Detail Container -->
+    <!-- Plan's Container -->
+    <div class="container mt-5">
+      <div class="row mx-auto">
+        <div class="col-12 fw-bolder fs-2 text-danger">Tariffs</div>
+        <div class="col-12">
+          <h3 class="fw-bold fs-1">Choose your plan</h3>
+        </div>
+        <div class="col-12">
+          <p class="text-light fs-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+            bibendum, est ac faucibus hendrerit, mauris ante viverra urna, in
+            elementum urna est ut ligula.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
+          <div class="card border-0">
+            <div class="card-body text-center p-0">
+              <div class="fw-bold fs-5 bg-secondary py-2">Easy Surfing</div>
+              <p class="fs-5 bg-danger text-light py-2">INTERNET</p>
+              <h4 class="text-danger fw-bolder">$24.99</h4>
+              <p class="fw-bold">Month</p>
+              <p>It is a long established fact distracteontent</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              class="btn btn-light text-dark rounded-pill mt-2 btn-outline-danger border-0"
+              type="button"
+            >
+              See More
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
+          <div class="card border-0">
+            <div class="card-body text-center p-0">
+              <div class="fw-bold fs-5 bg-secondary py-2">Impression</div>
+              <p class="fs-5 bg-danger text-light py-2">TV</p>
+              <h4 class="text-danger fw-bolder">$24.99</h4>
+              <p class="fw-bold">Month</p>
+              <p>It is a long established fact distracteontent</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              class="btn btn-light text-dark rounded-pill mt-2 btn-outline-danger border-0"
+              type="button"
+            >
+              See More
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 mb-4 mx-auto">
+          <div class="card border-0">
+            <div class="card-body text-center p-0">
+              <div class="fw-bold fs-5 bg-secondary py-2">Premium Plan</div>
+              <p class="fs-5 bg-danger text-light py-2">INTERNET+TV+PHONE</p>
+              <h4 class="text-danger fw-bolder">$24.99</h4>
+              <p class="fw-bold">Month</p>
+              <p>It is a long established fact distracteontent</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              class="btn btn-light text-dark rounded-pill mt-2 btn-outline-danger border-0"
+              type="button"
+            >
+              See More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Plan's Container -->
+
+    <!-- Email Container -->
+    <div class="container mt-5 email-box">
+      <div class="row">
+        <div class="col-12 mb-5">
+          <h2 class="text-center">
+            Check ability to connect our services in your area
+          </h2>
+        </div>
+        </div>
+        <div class=" d-flex justify-content-center">
+          <div class="row">
+        <div class="col-12 mb-4">
+          <p class="text-center">
+            IT IS A LONG ESTABLISHED FACT THAT A READER WILL BE DISTRACTED
+          </p>
+        </div>
+        <div class="col-12 mb-5">
+          <div class="d-flex justify-content-center input-group  ">
+        <div style="width: 300px;display:inline-block">
+          <input class="border-0 first-email" id="email-input" type="email"  placeholder=" Enter your address" />
+        </div>
+          <span class="input-group-text border-0 bg-light">
+            <button class="btn rounded-pill btn-dark">GET STARTED</button>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    <!-- Email Container -->
+      <!-- Review Container -->
+      <div class="container mt-5 mb-5">
+        <hr class="borderLine">
+        <div class="row">
+          <div class="col-12 mt-5 mb-5">
+            <h2 class="text-center">What our clients say</h2>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 text-center mb-sm-0 mb-5">
+            <img src="https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg" alt="...." height="180px">
+          </div>
+          <div class="col-md-8 col-sm-6 col-12">
+            <h4 class="mb-3">Miller</h4> 
+            <p>lpsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id e</p>
+          </div>
+        </div>
+      </div>
+      <!-- Review Container -->
+      <!-- Footer Container -->
+      <div class="container-fluid bg-dark text-light">
+        <div class="row">
+          <div class="col-12 bg-danger">
+            <div class="row">
+              <div class="col-sm-6 col-12 text-center">
+                <p class="fw-bolder fs-3">Subscribe Now</p>
+              </div>
+              <div class="col-sm-6 col-12 text-center">
+              <div style="width: 300px;display:inline-block">
+                <input type="email" placeholder="Enter your e-mail" id="subscribe-email">
+              </div>
+                <input type="submit" class="btn btn-dark rounded-pill" style="margin-bottom:3px;" value="Get Started">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 co-12 pt-5">
+            <h1 class="">Dicet TV</h1>
+            <h4 class="">CUSTOMER SERVICE</h4>
+            <p class="">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by</p>
+          </div>
+          <div class="col-md-3 col-sm-6 co-12 pt-5">
+            <h3>LET US HELP YOU</h3>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by</p>
+          </div>
+          <div class="col-md-3 col-sm-6 co-12 pt-5">
+            <h4>INFORMATION</h4>
+            <ul type="none" class="p-0">
+              <li>About Us</li>
+              <li>Carees</li>
+              <li>Sell on Shopee</li>
+              <li>Press & News</li>
+              <li>Competitions</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 co-12 pt-5">
+            <h4>OUR SHOPE</h4>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by</p>
+            <i class="bi bi-facebook fs-2 p-1"></i>
+            <i class="bi bi-twitter fs-2 p-1"></i>
+            <i class="bi bi-instagram fs-2 p-1"></i>
+            <i class="bi bi-linkedin fs-2 p-1"></i>
+          </div>
+
+        </div>
+      </div>
+      <!-- Footer Container -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

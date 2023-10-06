@@ -1,0 +1,111 @@
+[
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory",
+        "title": "CPB Application directory",
+        "childpages": [
+            {
+                "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/idea",
+                "title": "Idea",
+                "childpages": [
+                    {
+                        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/idea-child",
+                        "title": "Idea Child ",
+                        "childpages": []
+                    }
+                ]
+            },
+            {
+                "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/one-delivery",
+                "title": "One Delivery",
+                "childpages": []
+            },
+            {
+                "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/one-resource",
+                "title": "Onc resource",
+                "childpages": []
+            },
+            {
+                "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/view-all-application",
+                "title": "View all application",
+                "childpages": [
+                    {
+                        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/view-all-application/business-intelligence",
+                        "title": "Business intelligence",
+                        "childpages": []
+                    },
+                    {
+                        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/view-all-application/citi-screening-worlflow--cw-",
+                        "title": "Citi screening worlflow (Cw)",
+                        "childpages": []
+                    },
+                    {
+                        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/view-all-application/citi-screening-worlflow-4-0--Cx-",
+                        "title": "Citi screening worlflow 4.0 (Cx)",
+                        "childpages": []
+                    },
+                    {
+                        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/cpb-applications-directory/view-all-application/document-management-system",
+                        "title": "Document management system (DMS)",
+                        "childpages": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/learning-accelerator",
+        "title": "Learning accelerator",
+        "childpages": []
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/learning---development",
+        "title": "Learning development",
+        "childpages": []
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/content-library",
+        "title": "Content library",
+        "childpages": [
+            {
+                "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/events-library",
+                "title": "library 1",
+                "childpages": []
+            },
+            {
+                "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/events-library",
+                "title": "library 2",
+                "childpages": []
+            },
+            {
+                "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/events-library",
+                "title": "library 3",
+                "childpages": []
+            }
+        ]
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/events-library",
+        "title": "Events library",
+        "childpages": []
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/risk-management",
+        "title": "Risk management",
+        "childpages": []
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/tax",
+        "title": "tax",
+        "childpages": []
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/operations---technology",
+        "title": "Operations technology",
+        "childpages": []
+    },
+    {
+        "path": "/content/cpb/intranet/www-privatebank-citigroup-net/en/home/private-bank-resources/office-locations",
+        "title": "Office locations",
+        "childpages": []
+    }
+]

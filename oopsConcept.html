@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise OOP's</title>
+</head>
+<body>
+    <script>
+        //Encapsulation
+        //Abstration
+        //Inheritance
+        //Ploymorphism
+
+        //Encapsulation
+    if(true){
+        let a=10;
+        let b=30;
+        let c=()=>{
+            // alert(a+b)
+        }
+        c();
+        
+    }
+        let a="Simple Project";
+        let b="on OOP's Concept...";
+        // function c(){    alert(a+" "+b)    }
+        //Abstration
+
+        class BigB{
+            constructor(a,b){
+                this.a=a;
+                this.b=b
+            }
+            sum(){
+                // alert(this.a+this.b)
+            }
+            divide(){
+                // alert(this.a/this.b)
+            }
+        }
+        let user=new BigB(10,5)
+        user.sum()
+        user.divide()
+        
+        //Inheritance
+
+        const typing={
+            testing:"You are in typeing test",
+            score:"Your score is Good"
+        }
+        const test=Object.create(typing)
+        test.mkeys="most key pressed is 'W'"
+        test.lkeys="least key pressed is ','"
+        
+        // alert(test.mkeys);
+        // alert(test.testing);
+
+        //Ploymorphism
+
+        class A{
+            msg(){
+                // alert("Welcome to class A")
+            }
+            warning()
+            {
+                // alert("Something is Wrong..")
+            }
+
+        }
+        class B extends A{
+            danger(){
+                // alert("we are in Danger.....")
+            }
+            msg(){
+                // alert("Welcome to class B")
+            }
+            warning(){
+                super.warning();
+            }
+        }
+        let child=new B;
+        
+        child.danger()
+        child.msg()
+        child.warning()
+        console.log("-----------------------")
+     
+
+    </script>
+</body>
+</html>

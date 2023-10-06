@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <title>Tic Tack Toe</title>
+    <style>
+        .userBtn {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto mt-5">
+                <h1 class="display-5 text-center text-danger mb-3">Tic Tack Toe</h1>
+                <div id="mainBox">
+                    <div id="ruleBox">
+                        <p class="text-center fs-4">Game starts by Tap on box</p>
+                        <p class="text-center fs-6 text-muted">
+                            User start as <b>Player X</b>
+                        </p>
+                        <p class="text-center fs-6 text-muted">And</p>
+                        <p class="text-center fs-6 text-muted">
+                            Computer start as <b>Player O</b>
+                        </p>
+                    </div>
+                    <div id="gameBox" class="d-flex justify-content-center align-items-center flex-column">
+                        <div class="mb-1 ">
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn1"
+                                onclick="s(this)" />
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn2"
+                                onclick="s(this)" />
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn3"
+                                onclick="s(this)" />
+                        </div>
+                        <div class="mb-1">
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn4"
+                                onclick="s(this)" />
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn5"
+                                onclick="s(this)" />
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn6"
+                                onclick="s(this)" />
+                        </div>
+                        <div class="mb-1">
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn7"
+                                onclick="s(this)" />
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn8"
+                                onclick="s(this)" />
+                            <input type="button" value="" class="userBtn btn btn-dark buttonBox" id="gameBtn9"
+                                onclick="s(this)" />
+                        </div>
+                        <div>
+                            <input type="button" class="btn btn-danger mt-3" value="REST" onclick="window.location.reload();" />
+                        </div>
+                        <p class="text-center fs-4 mt-2" id="gameOver"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let move = [
+        "gameBtn1",
+        "gameBtn2",
+        "gameBtn3",
+        "gameBtn4",
+        "gameBtn5",
+        "gameBtn6",
+        "gameBtn7",
+        "gameBtn8",
+        "gameBtn9",
+    ];
+    let a = document.getElementById("gameBtn1");
+    let b = document.getElementById("gameBtn2");
+    let c = document.getElementById("gameBtn3");
+    let d = document.getElementById("gameBtn4");
+    let e = document.getElementById("gameBtn5");
+    let f = document.getElementById("gameBtn6");
+    let g = document.getElementById("gameBtn7");
+    let h = document.getElementById("gameBtn8");
+    let i = document.getElementById("gameBtn9");
+
+    let last=[a,b,c,d,e,f,g,h,i];
+    function s(p) {
+        if (p.value === "") {
+            p.value = "X";
+            pc();
+            win();
+        } else {
+            alert("This is Occupied palace ......");
+        }
+    }
+    function pc() {
+        for (let i = 0; i < 10; i++) {
+            let m = move[Math.floor(Math.random() * move.length)];
+
+            let pos = document.getElementById(m);
+            if (pos.value === "") {
+                pos.value = "O";
+                for (var j = 0; i < move.length; i++) {
+                    if (move[i] === m) {
+                        move.splice(i, 1);
+                    }
+                }
+                break;
+            } else {
+                console.log("Value BY PC Already Enterd");
+            }
+        }
+
+        console.log(move);
+    }
+    function win() {
+        if (
+            (a.value === "X" && b.value === "X" && c.value === "X") ||
+            (a.value === "X" && d.value === "X" && g.value === "X") ||
+            (c.value === "X" && f.value === "X" && i.value === "X") ||
+            (a.value === "X" && e.value === "X" && i.value === "X") ||
+            (g.value === "X" && e.value === "X" && c.value === "X") ||
+            (d.value === "X" && e.value === "X" && f.value === "X") ||
+            (g.value === "X" && h.value === "X" && i.value === "X") ||
+            (b.value === "X" && e.value === "X" && h.value === "X")
+        ) {
+            document.getElementById("gameOver").textContent = "X Win";
+            setTimeout(function() {
+                alert('X WIN')
+                window.location.reload();
+            },1000)
+        } else if (
+            (a.value === "O" && b.value === "O" && c.value === "O") ||
+            (a.value === "O" && d.value === "O" && g.value === "O") ||
+            (c.value === "O" && f.value === "O" && i.value === "O") ||
+            (a.value === "O" && e.value === "O" && i.value === "O") ||
+            (g.value === "O" && e.value === "O" && c.value === "O") ||
+            (d.value === "O" && e.value === "O" && f.value === "O") ||
+            (g.value === "O" && h.value === "O" && i.value === "O") ||
+            (b.value === "O" && e.value === "O" && h.value === "O")
+        ) {
+            document.getElementById("gameOver").textContent = "O Win";
+            setTimeout(function() {
+                alert('O WIN')
+                window.location.reload();
+            },1000)
+            
+        }
+        // else{
+        //     for (let k = 0; k < last.length; k++) {
+                
+        //         if (last) {
+                    
+        //         }
+        //     }
+        // }
+
+    }
+
+</script>
+
+</html>

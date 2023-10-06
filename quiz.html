@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <title>Quiz Round</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-3 mx-auto">
+          <p class="display-4 text-dark">Awesome Quiz</p>
+        </div>
+        <div class="col-12 mx-auto">
+          <p class="text-muted fs-2" id="question-Box">
+            Who was the first President of the United States?
+          </p>
+        </div>
+        <div class="col-12 ms-5" id="answer-Box">
+          <!-- <p class="fs-6" id="">Option Name</p> -->
+          <!-- <button type="button" class="btn btn-sm btn-success" id="" value=${questions[j].answ}> Select Answer</button> -->
+        </div>
+        <div class="col-2 ms-auto">
+          <button
+            class="btn btn-warning "
+            onclick="nextQuestion()"
+            id="nextQues"
+          >
+          Next <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6" id="userAnswer"></div>
+        <div class="col-6" id="correctAns"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let c = 1;
+    let optionsId = 0;
+    let z = 0;
+    let a = 0;
+    let answerId = 100;
+    let score = 0;
+    let user_Answer=[];
+    let correctAnswer=[]
+    let questions = [
+      {
+        ques: "Who was the first President of the United States?",
+        answ: 1,
+        ansWritten:"George Washingtone",
+        options: [
+          "Thomas Jefferson",
+          "George Washington",
+          "Thomas Edison",
+          "I don't know",
+        ],
+      },
+      {
+        ques: "What is the answer to the Ultimate Question of Life, the Universe, and Everything?",
+        answ: 0,
+        ansWritten:"Pi",
+        options: ["Pi", "42", "Wah?", "I don't know"],
+      },
+      {
+        ques: "Do you love to code?",
+        answ: 2,
+        ansWritten:"Love It",
+        options: ["No", "Not At All", "Love It", "Yes"],
+      },
+      {
+        ques: "What's the best programming language?",
+        answ: 3,
+        ansWritten:"JavaScript",
+        options: ["Php", "C#", "Python", "JavaScript"],
+      },
+      {
+        ques: "Is Jason Chan Awesome?",
+        ansWritten:"NO",
+        answ: 1,
+        options: ["Yes", "No", "Maybe", "I don't know"],
+      },
+    ];
+    nextQuestion();
+    function nextQuestion() {
+      document.getElementById("answer-Box").innerHTML = "";
+      a = 0;
+      answerId = 100;
+      if (optionsId < questions.length) {
+        document.getElementById("question-Box").innerHTML =
+          "Q." + c + " " + questions[optionsId].ques;
+        c++;
+
+        for (let i = 0; i < 4; i++) {
+          if (z < questions.length) {
+            document.getElementById(
+              "answer-Box"
+            ).innerHTML += `<p class="fs-5" id="${a}">${questions[z].options[i]}</p>
+        <button type="button" class="btn btn-sm btn-success mb-2" id="${answerId}" value=${a} onclick=here("${answerId}")> Select Answer</button>`;
+            a++;
+            answerId++;
+          }
+        }
+        optionsId++;
+      } else {
+        document.getElementById("question-Box").innerHTML = "GAME OVER";
+        document.getElementById("nextQues").classList.add("d-none");
+        document.getElementById("answer-Box").innerHTML = `<p class="fs-5 ms-4">Your Score is - ${score}</p>`;
+        for (let i = 0;i<questions.length; i++){
+          for (let j = 0; j < 5; j++) {
+            if (questions[i].options[user_Answer[j]]==questions[i].options[j]) { 
+              document.getElementById("userAnswer").innerHTML+=`User Answer  of Q.${i+1} ${questions[i].options[user_Answer[j]]} <br>`
+            }
+          }
+        }
+
+        for (let i = 0;i<questions.length; i++) {
+          document.getElementById("correctAns").innerHTML+=`Correct Answer of Q.${i+1} ${questions[i].ansWritten}  <br>`;
+        }
+      }
+      z++;
+    }
+    function here(para) {
+      let wwe = document.getElementById(para).value;
+      let v = optionsId - 1;
+      let h = questions[v].answ;
+      correctAnswer.push(wwe);
+      user_Answer.push(parseInt(document.getElementById(para).value));
+      document.getElementById(para).classList.remove("btn-success");
+      document.getElementById(para).classList.add("btn-danger");
+      if (wwe == h) {
+        console.log("Correct Answer");
+        score++;
+      }
+      for (let i = 100; i < 400; i++) {
+        let j = i - 100;
+        if (j == para) {
+          document.getElementById(para).classList.remove("btn-success");
+          document.getElementById(para).classList.add("btn-danger");
+        } else {
+          let p = i.toString();
+          document.getElementById(i).disabled = "true";
+        }
+      }
+
+    }
+  </script>
+</html>

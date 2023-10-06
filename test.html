@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = 5; // row or column count
+      // defining an empty string
+
+      // for(let i = 0; i < n; i++) { // external loop
+      //   for(let j = 0; j < n; j++) { // internal loop
+      //   document.write("*") ;
+      //   }
+      //   // newline after each row
+      //   document.write("<br>");
+      // }
+      
+      //Constuctor - functions which is used to create object
+      console.log("------------------Object Created with Constructor Function");
+      function World(name, lastname) {
+        this.name = name;
+        this.lastname = lastname;
+      }
+
+      World.prototype.fullName = function () {
+        return this.name + " " + this.lastname;
+      };
+      World.prototype.nameLength = function () {
+        console.log((this.name + this.lastname).length);
+      };
+      function Earth(n, l) {
+        World.call(this, n, l);
+      }
+      let a1 = new World("Max", "Mad");
+      let a2 = new World("Lucky", "Singh");
+
+      console.log(a1);
+      console.log(a2);
+      console.log(a1.fullName());
+      
+      a1.nameLength();
+      console.log(a2.fullName());
+      a2.nameLength();
+
+ //.call(this,argument list) method is used to inherit the function Constuctor     
+      function Earth(n, l) {
+        World.call(this, n, l);
+      }
+
+      //Class
+      console.log("------------------Object Created with Class");
+      class Task {
+        constructor(n, l) {
+          this.name = n;
+          this.lname = l;
+        }
+
+        fname() {
+          console.log(this.name + " " + this.lname);
+        }
+        len() {
+          console.log((this.name + this.lname).length);
+        }
+      }
+      let b1 = new Task("Roy", "Thomas");
+      let b2 = new Task("Ayush", "Singh");
+
+      console.log(b1);
+      console.log(b2);
+      b1.fname();
+      b1.len();
+      b2.fname();
+      b2.len();
+
+    //   'extends' keyword is being used for inherit classs properities
+    </script>
+  </body>
+</html>

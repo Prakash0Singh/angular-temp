@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+  <title>To-Do List</title>
+  <style>
+    .fieldCSS {
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid gray;
+    }
+
+    .txt {
+      min-width: 50%;
+    }
+    .todo-item{
+      width: 70%;
+      border: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="text-center mt-3">To-Do List in JavaScript</h2>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-10 mx-auto">
+        <form  id="todo-add" onsubmit="savetask()">
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Take a note...." id="todo-item" 
+              style="height: 80px"></textarea>
+            <label for="note">Take a note....</label>
+          </div>
+          <br>
+        <input type="submit" class="btn btn-success btn-sm" id="todo-save" value="Save">
+      </form> 
+        <br />
+      </div>
+      <div class="col-10 mx-auto mt-5">
+        <p class="text-muted">Your Todo list</p>
+        <div id="todo-list">
+
+        </div>
+        <template id="todo-template">
+          <div class="todo-row">
+            <input type="text" class="todo-item fs-5" disabled>
+            <input type="button" class="todo-done border-0" value="&#10004;" style="display: none;">
+            <input type="button" class="todo-edit btn btn-sm btn-warning" value="Edit">
+            <input type="button" class="todo-del btn btn-sm btn-danger" value="Delete">
+          </div>
+          </template>
+      </div>
+    </div>
+  </div>
+  <br>
+
+</body>
+<script >
+var todo = {
+  // (A) INITIALIZE TO DO LIST
+  data : [],        // todo list data array
+  hAdd : null,      // html add item text field
+  hTemplate : null, // html item row template
+  hList : null,     // html to do list
+  init : () => {
+    // (A1) INIT LOCALSTORAGE
+    if (localStorage.todo == undefined) { localStorage.todo = "[]"; }
+
+    // (A2) RESTORE PREVIOUS SESSION
+    todo.data = JSON.parse(localStorage.todo);
+
+    // (A3) GET HTML ELEMENTS
+    todo.hAdd = document.getElementById("todo-item");
+    todo.hTemplate = document.getElementById("todo-template").content;
+    todo.hList = document.getElementById("todo-list");
+
+    // (A4) "ENABLE" ADD ITEM FORM
+    document.getElementById("todo-add").onsubmit = todo.add;
+
+    // (A5) DRAW TO DO LIST
+    todo.draw();
+  },
+
+  // (B) DRAW TO DO LIST
+  draw : () => {
+    // (B1) RESET LIST
+    todo.hList.innerHTML = "";
+
+    // (B2) LOOP & GENERATE ROWS
+    if (todo.data.length>0) 
+    { for (let id in todo.data) {
+      let row = todo.hTemplate.cloneNode(true),
+          edit = row.querySelector(".todo-edit"),
+          item = row.querySelector(".todo-item");
+      item.value = todo.data[id][0];
+      item.id = "item" + id;
+      edit.id = "edit" + id;
+      edit.onclick = () => todo.edit(id);
+      row.querySelector(".todo-done").onclick = () => todo.toggle(id);
+      row.querySelector(".todo-del").onclick = () => todo.del(id);
+      if (todo.data[id][1]) { row.querySelector(".todo-item").classList.add("todo-ok"); }
+      todo.hList.appendChild(row);
+    }}
+  },
+
+  // (C) HELPER - SAVE DATA INTO LOCAL STORAGE
+  save: () => {
+    localStorage.todo = JSON.stringify(todo.data);
+    todo.draw();
+  },
+
+  // (D) ADD A NEW ITEM TO THE LIST
+  add : () => {
+    todo.data.push([todo.hAdd.value, false]);
+    todo.hAdd.value = "";
+    todo.save();
+    return false;
+  },
+
+  // (E) TOGGLE EDIT ITEM
+  edit : id => {
+    // (E1) GET EDIT BUTTON + ITEM
+    let edit = document.getElementById("edit" + id),
+        item = document.getElementById("item" + id);
+
+    // (E2) SET EDITABLE
+    if (item.disabled) {
+      item.classList.add("editing");
+      item.disabled = false;
+      edit.value = "Update";
+    }
+
+    // (E3) SAVE
+    else {
+      item.classList.remove("editing");
+      item.disabled = true;
+      edit.value = "\u270E";
+      todo.data[id][0] = item.value;
+      todo.save();
+    }
+  },
+
+  // (F) UPDATE TODO ITEM DONE/NOT YET
+  toggle: id => {
+    todo.data[id][1] = !todo.data[id][1];
+    todo.save();
+  },
+
+  // (G) DELETE ITEM
+  del: id => { if (confirm("Delete task?")) {
+    todo.data.splice(id, 1);
+    todo.save();
+  }}
+};
+
+// (H) PAGE INIT
+window.addEventListener("load", todo.init);
+</script>
+
+</html>

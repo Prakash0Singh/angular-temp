@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearCounting()" type="button">Clear Count</button>
+
+    <script>
+        // adding item in Local Storage
+        localStorage.setItem("name","admin");
+        localStorage.setItem("color","red");
+        localStorage.setItem("userid","usdxa12s")
+        
+        localStorage.removeItem("color");
+        // localStorage.clear()
+
+        function clearCounting() {
+    localStorage.removeItem('clickcount');
+}
+
+        console.log(localStorage.getItem("name"));
+
+        
+        // Session 
+        sessionStorage.setItem("favitem","car")
+        sessionStorage.setItem("device","laptop")
+        sessionStorage.setItem("pageinfo","homepage")
+
+        console.log(sessionStorage.getItem("device"))
+        console.log(`Key Of Index 2 = ${sessionStorage.key(1)}`);
+
+    </script>
+</body>
+</html>

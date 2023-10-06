@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+  </head>
+  <body>
+    <h1>Stop Watch in Js</h1>
+    <p>Form 1 min stopwatch count 2 sec till 2 min 30 sec</p>
+    <div id="stopwatchTime">00 : 00 : 00 : 00</div>
+    <br />
+    <button onclick="start(true)" id="startBtn">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+    <br>
+    <h1>Calculator</h1>
+    <label for="first">Value 1 </label>
+    <input type="number" id="first" placeholder="Enter 1st Number" oninput="firstValue(this)">
+    <br>
+    <br>
+    <label for="second">Value 2 </label>
+    <input type="number" id="second" placeholder="Enter 2nd Number" oninput="secondValue(this)">
+    <h4>Operations :</h4>
+    <button onclick="calcu(this)" value="+">Add</button>
+    <button onclick="calcu(this)"  value="-">Minus</button>
+    <button onclick="calcu(this)"  value="*">Multiply</button>
+    <button onclick="calcu(this)"  value="/">Divide</button>
+    <button onclick="calcu(this)"  value="%">Reminder</button>
+  </body>
+  <script>
+    let time = document.querySelector("#stopwatchTime");
+    let startBtn = document.querySelector("#startBtn");
+    let timeOut = null;
+    let ms = 0;
+    let sec = 0;
+    let min = 0;
+    let hr = 0;
+
+    function start(para) {
+      if (para) {
+        startBtn.disabled = true;
+      }
+      timeOut = setInterval(() => {
+        ms = parseInt(ms);
+        sec = parseInt(sec);
+        min = parseInt(min);
+        hr = parseInt(hr);
+
+        ms++;
+        //3 sec add at 0 min & 2 min
+
+        // if ((min === 2 && ms === 100) || (min === 0 && ms == 100)) {
+        //   sec = sec + 3;
+        //   ms = 0;
+        //   console.log(time.innerHTML);
+        // }
+        //normale run 2min than add 2sec till 1 min 30sec
+        if ((min === 1 && ms === 100) || (min == 2 && sec <30 && ms == 100)) {
+          sec = sec + 2;
+          ms = 0;
+          console.log(time.innerHTML);
+        }
+        if (ms == 100) {
+          sec += 1;
+          ms = 0;
+        }
+        if (sec == 60) {
+          min += 1;
+          sec = 0;
+        }
+        if (min == 60) {
+          hr += 1;
+          min = 0;
+        }
+        if (ms < 10) {
+          ms = "0" + ms;
+        }
+        if (sec < 10) {
+          sec = "0" + sec;
+        }
+        if (min < 10) {
+          min = "0" + min;
+        }
+        if (hr < 10) {
+          hr = "0" + hr;
+        }
+        time.innerHTML = hr + " : " + min + " : " + sec + " : " + ms;
+
+        //Stop timmer on 10 sec
+        // if (sec === 10 && ms == 0) {
+        //   clearInterval(timeOut);
+        //   console.log(time.innerHTML);
+        //   startBtn.disabled = false;
+        // }
+      }, 0);
+    }
+    function stop() {
+      console.log(time.innerHTML);
+      clearInterval(timeOut);
+      startBtn.disabled = false;
+    }
+    function reset() {
+      ms = 0;
+      sec = 0;
+      min = 0;
+      hr = 0;
+      clearInterval(timeOut);
+      time.innerHTML = "00 : 00 : 00 : 00";
+      console.log(time.innerHTML);
+      startBtn.disabled = false;
+    }
+    
+    // Calculator Function
+    function firstValue(para){
+      one=parseInt(para.value)
+    }
+    function secondValue(para){
+      two=parseInt(para.value)
+    }
+
+    
+    function calcu(para) {
+      if (para.value==="+") {
+        alert(one+two);
+      }
+      if (para.value=="-") {    
+        alert(one-two)
+      }
+      if (para.value=="*") {
+        alert(one*two)
+        
+      }
+      if (para.value=="/") {
+        alert(one/two)
+        
+      }
+      if (para.value=="%") {
+        alert(one%two)
+      }
+    }
+
+  </script>
+</html>

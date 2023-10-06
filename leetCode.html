@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Online Javascript Editor for free
+    // Write, Edit and Run your Javascript code using JS Online Compiler
+function task(){
+    let arr=[1,2,5,7,20]
+    let total=15;
+    let sorArr=arr.sort();
+    console.log(`Og Array = `+arr)
+    console.log(`Sorted Array = `+sorArr);
+    demo:
+    for(i=0;i<sorArr.length;i++)
+    {
+        if(total==sorArr[sorArr.length-1])
+        {
+            break;
+        }
+        else if(total==sorArr[sorArr.length-1]+sorArr[sorArr.length-1])
+        {
+            break
+        }
+        else
+        {
+            for(i=0;i<sorArr.length;i++)
+            {
+            if(total==sorArr[i]+sorArr[sorArr.length-1]+sorArr[sorArr.length-1])
+                {
+                    console.log(sorArr[i] , sorArr[sorArr.length-1] ,sorArr[sorArr.length-1])
+                    break demo;
+                }
+            }
+            sorArr.pop()
+            
+        }
+    }
+    }
+    task();
+    console.log("Welcome to Programiz!");
+</script>
+</html>
